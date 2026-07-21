@@ -138,7 +138,7 @@ export default function Certificates() {
   }, [isInView, controls]);
 
   return (
-    <section className="relative w-full py-24 bg-[#b8ff5a] border-b-8 border-black overflow-hidden font-sans">
+    <section id="certificates" className="relative w-full py-24 bg-[#b8ff5a] border-b-8 border-black overflow-hidden font-sans">
       <style dangerouslySetInnerHTML={{__html: `
         .pacman {
           width: 0;
