@@ -88,10 +88,10 @@ export default function NeoBrutalistHero() {
             <button 
               onClick={(e) => {
                 e.preventDefault();
-                window.open("/doc/Ayush_Ranjane_Data_science_resume.pdf", "_blank");
+                window.open("/doc/Ayush_resume.pdf", "_blank");
                 const link = document.createElement("a");
-                link.href = "/doc/Ayush_Ranjane_Data_science_resume.pdf";
-                link.download = "Ayush_Ranjane_Data_science_resume.pdf";
+                link.href = "/doc/Ayush_resume.pdf";
+                link.download = "Ayush_resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
