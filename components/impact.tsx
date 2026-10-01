@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client'
 
 import { motion } from 'framer-motion'
@@ -27,6 +28,13 @@ const quickProfile = [
     subtext: 'DATA SCIENCE',
     variant: 'dark',
   },
+=======
+const metrics = [
+  { value: '3+', label: 'AI systems built end-to-end' },
+  { value: '8.53', label: 'CGPA in AI & Data Science' },
+  { value: '100%', label: 'Projects shipped with real APIs' },
+  { value: '24/7', label: 'Real-time monitoring pipelines' },
+>>>>>>> eb407aaf0d749c728a55a04164da4e14dbfd996c
 ]
 
 const containerVariants = {
