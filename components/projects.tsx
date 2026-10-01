@@ -4,43 +4,24 @@ const projects = [
   {
     number: '01',
     title: 'GreenCO2',
-    tag: 'Production-style AI System',
+    tag: 'AI Monitoring Platform',
     description: 'AI-Powered CO₂ Emission Monitoring & Compliance Platform. Track emissions, predict trends with Prophet, and stay compliant using automated alerts and anomaly detection.',
     problem: 'Industrial plants struggle with fragmented carbon accounting and regulatory compliance, leading to unexpected penalties.',
     decisions: 'Chose Prophet over ARIMA for its superior handling of missing emission logs and weekly seasonality; used Isolation Forest for robust, high-dimensional anomaly detection without needing labeled outliers.',
     metrics: [
       { label: 'Forecast Accuracy', value: '94%' },
-      { label: 'Alert Latency', value: '<50ms' },
+      { label: 'Prediction Window', value: '7-14 Days' },
       { label: 'Compliance', value: '100%' }
     ],
     image: '/greenco2.png',
     liveLink: 'https://green-co-2.vercel.app/', 
     githubLink: 'https://github.com/Ayush-Ranjane/GreenCO2',
     detailLink: '/projects/greenco2',
-    stack: ['Python', 'Flask', 'React', 'PostgreSQL', 'Docker'],
+    stack: ['Python', 'Flask', 'React', 'PostgreSQL', 'Prophet', 'Isolation Forest', 'Docker', 'JWT', 'REST APIs'],
     accent: 'bg-primary text-primary-foreground',
   },
   {
     number: '02',
-    title: 'LifeSaver (Vibe2Ship)',
-    tag: 'AI Productivity Co-Pilot',
-    description: 'A hyper-intelligent, AI-powered productivity OS. Uses Gemini to turn natural language into structured tasks, auto-schedule calendar slots, and diagnose procrastination.',
-    problem: 'Modern builders suffer from cognitive overload trying to manage tasks, schedules, and goals across fragmented tools.',
-    decisions: 'Selected Gemini AI for superior natural language entity extraction over regex; utilized Firestore for sub-second real-time sync across clients.',
-    metrics: [
-      { label: 'Parsing Speed', value: '<800ms' },
-      { label: 'Sync Accuracy', value: '100%' },
-      { label: 'Inbox Clutter', value: '0' }
-    ],
-    image: '/lifesaver.png',
-    liveLink: 'https://lifesaver-three.vercel.app/',
-    githubLink: 'https://github.com/Ayush-Ranjane/lifesaver',
-    detailLink: '/projects/lifesaver',
-    stack: ['Next.js', 'Gemini AI', 'Firebase', 'Zustand', 'Tailwind'],
-    accent: 'bg-secondary text-secondary-foreground',
-  },
-  {
-    number: '03',
     title: 'AQI Prediction System',
     tag: 'Time-Series ML',
     description: 'End-to-end Air Quality Index forecasting system. Uses XGBoost and Random Forest to predict AQI from 11 distinct pollutant parameters with high precision.',
@@ -55,7 +36,7 @@ const projects = [
     liveLink: 'https://aqi-prediction-analysis-system.onrender.com/',
     githubLink: 'https://github.com/Ayush-Ranjane/AQI-Prediction-Analysis-System',
     detailLink: '/projects/aqi',
-    stack: ['XGBoost', 'Flask', 'Scikit-learn', 'Pandas'],
+    stack: ['Python', 'XGBoost', 'Random Forest', 'Scikit-learn', 'Flask', 'Pandas', 'NumPy'],
     accent: 'bg-foreground text-background',
   },
 ]
@@ -80,22 +61,22 @@ export function Projects() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="group glass relative flex flex-col lg:flex-row rounded-xl border-2 border-foreground shadow-brutal-lg overflow-hidden"
+              className="group glass relative flex flex-col lg:flex-row rounded-xl border-2 border-foreground shadow-brutal-lg overflow-hidden hover:shadow-brutal-xl hover:-translate-y-2 transition-all duration-300 bg-white"
             >
               {/* Left Column: Content */}
-              <div className="flex flex-col p-6 md:p-10 lg:w-[55%]">
+              <div className="flex flex-col p-6 md:p-10 lg:w-[55%] relative z-10">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <span
-                    className={`inline-block rounded-md border-2 border-foreground px-3 py-1 text-xs font-bold uppercase tracking-wider ${project.accent}`}
+                    className={`inline-block rounded-md border-2 border-foreground px-3 py-1 text-xs font-bold uppercase tracking-wider transition-transform group-hover:rotate-2 ${project.accent}`}
                   >
                     {project.tag}
                   </span>
-                  <span className="font-mono text-3xl font-bold text-muted-foreground/40">
+                  <span className="font-mono text-3xl font-bold text-muted-foreground/40 group-hover:text-muted-foreground transition-colors">
                     {project.number}
                   </span>
                 </div>
 
-                <h3 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                <h3 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
                 
@@ -104,19 +85,19 @@ export function Projects() {
                 </p>
 
                 <div className="space-y-6 flex-1">
-                  <div>
+                  <div className="group/problem cursor-default">
                     <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-2 h-2 bg-secondary rounded-full"></span> The Problem
+                      <span className="w-2 h-2 bg-secondary rounded-full group-hover/problem:scale-150 transition-transform"></span> The Problem
                     </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed border-l-2 border-foreground/20 pl-4 ml-1">
+                    <p className="text-muted-foreground text-sm leading-relaxed border-l-2 border-foreground/20 pl-4 ml-1 group-hover/problem:border-secondary group-hover/problem:text-foreground transition-colors">
                       {project.problem}
                     </p>
                   </div>
-                  <div>
+                  <div className="group/decision cursor-default">
                     <h4 className="font-mono text-sm font-bold uppercase tracking-wider text-foreground mb-2 flex items-center gap-2">
-                      <span className="w-2 h-2 bg-primary rounded-full"></span> Architecture Decisions
+                      <span className="w-2 h-2 bg-primary rounded-full group-hover/decision:scale-150 transition-transform"></span> Architecture Decisions
                     </h4>
-                    <p className="text-muted-foreground text-sm leading-relaxed border-l-2 border-foreground/20 pl-4 ml-1">
+                    <p className="text-muted-foreground text-sm leading-relaxed border-l-2 border-foreground/20 pl-4 ml-1 group-hover/decision:border-primary group-hover/decision:text-foreground transition-colors">
                       {project.decisions}
                     </p>
                   </div>
@@ -125,8 +106,8 @@ export function Projects() {
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-3 gap-4 mt-8 pt-8 border-t-2 border-foreground/10">
                   {project.metrics.map((metric, i) => (
-                    <div key={i} className="flex flex-col">
-                      <span className="text-2xl md:text-3xl font-black text-foreground">{metric.value}</span>
+                    <div key={i} className="flex flex-col group/metric hover:-translate-y-1 transition-transform cursor-default">
+                      <span className="text-2xl md:text-3xl font-black text-foreground group-hover/metric:text-primary transition-colors">{metric.value}</span>
                       <span className="font-mono text-[10px] sm:text-xs font-bold text-muted-foreground uppercase">{metric.label}</span>
                     </div>
                   ))}
@@ -137,7 +118,7 @@ export function Projects() {
                   {project.stack.map((tech) => (
                     <li
                       key={tech}
-                      className="rounded-md border-2 border-foreground bg-card px-2.5 py-1 font-mono text-xs font-semibold shadow-brutal-sm"
+                      className="rounded-md border-2 border-foreground bg-card px-2.5 py-1 font-mono text-xs font-semibold shadow-brutal-sm hover:bg-foreground hover:text-white transition-colors cursor-default"
                     >
                       {tech}
                     </li>

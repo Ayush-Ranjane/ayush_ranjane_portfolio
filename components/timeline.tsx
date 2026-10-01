@@ -6,9 +6,9 @@ import { motion } from 'framer-motion'
 const timeline = [
   {
     title: 'Joint Technical Head',
-    institution: 'Novus Neuron Club (DYPIEMR)',
-    period: '2025 – Present',
-    description: 'Guided junior members on machine learning projects and data science workflows, fostering a hands-on AI culture.',
+    institution: 'Novus Neuron Club, DYPIEMR',
+    period: 'Sep 2025 – Sep 2026',
+    description: 'Guided junior members in data preprocessing, machine learning model development, evaluation, and project troubleshooting. Provided structured technical debugging and implementation support for AI/ML projects.',
     accent: 'bg-[#b8ff5a]',
     textColor: 'text-foreground'
   },

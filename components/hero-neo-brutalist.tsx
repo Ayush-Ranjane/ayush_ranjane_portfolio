@@ -63,9 +63,9 @@ export default function NeoBrutalistHero() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { type: "spring", bounce: 0.3, duration: 1.5 } }
             }}
-            className="mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl text-black/80 max-w-[22rem] lg:max-w-sm leading-snug"
+            className="mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl text-black/80 max-w-[22rem] lg:max-w-[28rem] leading-snug font-medium"
           >
-            Understands prototyping, interaction, and intersecting data for everyone.
+            Engineering practical AI solutions. I develop end-to-end machine learning applications from robust data pipelines to production-ready REST APIs.
           </motion.p>
 
           <motion.div 
@@ -88,10 +88,10 @@ export default function NeoBrutalistHero() {
             <button 
               onClick={(e) => {
                 e.preventDefault();
-                window.open("/doc/Ayush_Ranjane_Data_science_resume.pdf", "_blank");
+                window.open("/doc/Ayush_resume.pdf", "_blank");
                 const link = document.createElement("a");
-                link.href = "/doc/Ayush_Ranjane_Data_science_resume.pdf";
-                link.download = "Ayush_Ranjane_Data_science_resume.pdf";
+                link.href = "/doc/Ayush_resume.pdf";
+                link.download = "Ayush_resume.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
